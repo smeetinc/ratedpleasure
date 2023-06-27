@@ -1,0 +1,85 @@
+  .mytabs{
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 90%;
+            margin-left: 5%;
+            padding: 25px;
+        }
+        .mytabs input[type='radio']{
+            display: none;
+        }
+        .mytabs label{
+            padding: 25px;
+            background: #e2e2e2;
+            font-weight: bold;
+            border: 2px solid #333;
+            cursor: pointer;
+        }
+        .mytabs .tab{
+            width: 100%;
+            padding: 20px;
+            background: #fff;
+            order: 1;
+            display: none;
+        }
+        /*.mytabs .tab h2{
+            font-size: 3em;
+        }*/
+        .mytabs input[type='radio']:checked + label + .tab{
+            display: block;
+        }
+        .mytabs input[type='radio']:checked + label{
+            background: #fff;
+            border: 2px solid #333;
+        }
+        .payForm{
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #999;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .payForm input, .payForm select{
+            margin-bottom: 10px;
+            height: 40px;
+            padding: 2px;
+            width: 80%;
+
+        }
+        .paybtn{
+           
+            border: solid 1px #0081D5;
+            font-size: 16px;
+            line-height: 1;
+            padding: 16px 30px;
+            border-radius: 30px;
+            background: #FFFFFF;
+            color: #0081D5;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s linear;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .paybtn:hover, .paybtn:focus{
+            background: #005C99;
+            color: #FFFFFF;
+        }
+        .paybtn:active{
+            background: #FFFFFF;
+            color: #0081D5;
+        }
+        .payForm .formLabel{
+            padding: 0;
+            background: transparent;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+       .note{
+        padding: 20px;
+        font-size: 12;
+        color: crimson;
+       }
+       .note p{
+        color: red;
+       }

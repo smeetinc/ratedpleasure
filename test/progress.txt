@@ -1,0 +1,20 @@
+--- worked on the following today 17/01/2023
+#   product_details.php
+#   main.css
+#   includes/details_logic.inc.php
+#   common_functions.php
+#   header.php
+#   display_all.php
+#   index.php
+#   help_center.php
+
+---worked on the following today 23/01/2023
+#   users_area/footer.php
+#   admin_area/footer.php
+#   footer.php
+#   help_center.php
+
+
+---worked on the following today 03/02/2023
+#   header.php in users_area link to cart.php in mobile view
+#   cart.php link to continue shopping in empty cart situation 

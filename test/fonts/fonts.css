@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Arvo';
+    src: url('arvo_regular_macroman/Arvo-Regular-webfont.eot');
+    src: url('arvo_regular_macroman/Arvo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('arvo_regular_macroman/Arvo-Regular-webfont.woff') format('woff'),
+    url('arvo_regular_macroman/Arvo-Regular-webfont.ttf') format('truetype'),
+    url('arvo_regular_macroman/Arvo-Regular-webfont.svg#arvoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
