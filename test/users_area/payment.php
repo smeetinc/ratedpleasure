@@ -166,16 +166,20 @@ include('../functions/common_functions.php');
                 <p><strong> Mobile number:</strong> <?php echo $user_mobile; ?></p>
                 <p class='text-muted'>Delivery charges: <strong>&#8358; <?php echo  $delivery_charges; ?> </strong></p>
                 <p><strong> Total cost of item(s): &#8358; <?php echo $total; ?></strong></p>
-                <h4>Total amount to be paid: <strong class='text-danger'>&#8358; <?php echo $net_total = ($total + $delivery_charges); ?></strong></h4>
-                
+                <h4>Total amount to be paid: <strong class='text-danger'>&#8358;
+                        <?php echo $net_total = ($total + $delivery_charges); ?></strong></h4>
+
                 <br>
-                <p class="text-muted fw-bold text-danger">If you want to edit your delivery information, click the button below.</p>
-                <button class="btn btn-secondary my-3"><a href="profile.php?edit_account" class="nav-link">Edit Account Information</a></button>
-                        <form id="paymentForm">
-                    <button type="submit" onclick="payWithPaystack()" class="btn btn-success btn-outline-none"> Pay Now </button>
+                <p class="text-muted fw-bold text-danger">If you want to edit your delivery information, click the
+                    button below.</p>
+                <button class="btn btn-secondary my-3"><a href="profile.php?edit_account" class="nav-link">Edit Account
+                        Information</a></button>
+                <form id="paymentForm">
+                    <button type="submit" onclick="payWithPaystack()" class="btn btn-success btn-outline-none"> Pay Now
+                    </button>
                 </form>
                 <script src="https://js.paystack.co/v1/inline.js"></script>
-                   
+
             </div>
         </div>
     </div>
@@ -195,8 +199,8 @@ include('../functions/common_functions.php');
     <!--- Bootstrap cdn js link --->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
 
 
     <!-- Swipper Js -->
@@ -206,60 +210,56 @@ include('../functions/common_functions.php');
     <script src="js/script.js"></script>
     <script>
     paymentForm.addEventListener("submit", payWithPaystack, false);
-function payWithPaystack(e) {
-  e.preventDefault();
-  let handler = PaystackPop.setup({
-    key: 'pk_test_a9712451c24879923801711ee668a00ebb143b09', // Replace with your public key
-    email: '<?php echo $user_email; ?>',
-    amount: '<?php echo $net_total*100; ?>',
-    subaccount: 'ACCT_dhrm7j7mmqyehjq',
-    bearer: 'subaccount',
-    ref: 'RP'+Math.floor((Math.random() * 1000000000) + 1)+'NGN', // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-    // label: "Optional string that replaces customer email"
-    username: '<?php echo $username; ?>',
+
+    function payWithPaystack(e) {
+        e.preventDefault();
+        let handler = PaystackPop.setup({
+            key: 'pk_test_a97124543b09', // Replace with your public key
+            email: '<?php echo $user_email; ?>',
+            amount: '<?php echo $net_total*100; ?>',
+            subaccount: 'ACCT',
+            bearer: 'subaccount',
+            ref: 'RP' + Math.floor((Math.random() * 1000000000) + 1) +
+            'NGN', // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+            // label: "Optional string that replaces customer email"
+            username: '<?php echo $username; ?>',
             metadata: {
-                custom_fields: [
-                    {
-                        display_name: "Usernmae",
-                        variable_name: "username",
-                        value: "<?php echo $username; ?>"
-                    }
-                ],
-                
-                 custom_fields: [
-                    {
-                        display_name: "Phone Number",
-                        variable_name: "user_mobile",
-                        value: "<?php echo $user_mobile; ?>"
-                    }
-                 ],
-                 custom_fields: [
-                    {
-                        display_name: "Address",
-                        variable_name: "user_address",
-                        value: "<?php echo $user_address; ?>"
-                    }
-                ]
+                custom_fields: [{
+                    display_name: "Usernmae",
+                    variable_name: "username",
+                    value: "<?php echo $username; ?>"
+                }],
+
+                custom_fields: [{
+                    display_name: "Phone Number",
+                    variable_name: "user_mobile",
+                    value: "<?php echo $user_mobile; ?>"
+                }],
+                custom_fields: [{
+                    display_name: "Address",
+                    variable_name: "user_address",
+                    value: "<?php echo $user_address; ?>"
+                }]
             },
-        
 
-        onClose: function(){
-        //window.location = "http://localhost/ratedpleasure/test/users_area/payment.php?transaction=call";
-      alert('Transaction cancelled');
-    },
-    callback: function(response){
-      //  const referenced = response.reference;
-        //window.location.href='success.php?successfullypaid='+referenced;
-      let message = 'Payment complete! Reference: ' + response.reference;
-      alert(message);
-      window.location = "http://localhost/ratedpleasure/test/verify.php?reference="+response.reference;
+
+            onClose: function() {
+                //window.location = "http://localhost/ratedpleasure/test/users_area/payment.php?transaction=call";
+                alert('Transaction cancelled');
+            },
+            callback: function(response) {
+                //  const referenced = response.reference;
+                //window.location.href='success.php?successfullypaid='+referenced;
+                let message = 'Payment complete! Reference: ' + response.reference;
+                alert(message);
+                window.location = "http://localhost/ratedpleasure/test/verify.php?reference=" + response
+                    .reference;
+            }
+        });
+        handler.openIframe();
+
     }
-  });
-  handler.openIframe();
-
-}
-    
-   </script>
+    </script>
 </body>
 
 </html>

@@ -1,7 +1,8 @@
-<?php 
+<?php /*
 require "../private/autoload.php";
 include "functions/common_functions.php";
 session_start();
+*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,25 +12,28 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <meta name="description" content="Ratedpleasure is the nigerian website for all things sexual toys related, we offer you affordable, top quality toys and other accessories to enhance your sex life">
-    <meta name="keywords" content="ratedpleasure, pleasure, rated, 18+, adult, toys, sex, sex life, orgasm, masturbate, self love, hot, dildo, bdsm kit, adult toys, male, female, oils, lubricants, lube, viagra, condom, flavours, vibrator, butt plug, clips, nigeria, Nigeria, online store, home delivery, descrete service, privacy">
-    <meta name="author" content="www.ratedpleasure.com"> 
-    
+    <meta name="description"
+        content="Ratedpleasure is the nigerian website for all things sexual toys related, we offer you affordable, top quality toys and other accessories to enhance your sex life">
+    <meta name="keywords"
+        content="ratedpleasure, pleasure, rated, 18+, adult, toys, sex, sex life, orgasm, masturbate, self love, hot, dildo, bdsm kit, adult toys, male, female, oils, lubricants, lube, viagra, condom, flavours, vibrator, butt plug, clips, nigeria, Nigeria, online store, home delivery, descrete service, privacy">
+    <meta name="author" content="www.ratedpleasure.com">
+
     <title>RatedPleasure</title>
 
-    <meta property="og:title" content="RtaedPleasure"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="www.ratedpleasure.com"/>
-    <meta property="og:image" content="www.ratedpleasure.com/img/logo4.png"/>
-    <meta property="og:description" content="Ratedpleasure is the nigerian website for all things sexual toys related, we offer you affordable, top quality toys and other accessories to enhance your sex life"/>
+    <meta property="og:title" content="RtaedPleasure" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="www.ratedpleasure.com" />
+    <meta property="og:image" content="www.ratedpleasure.com/img/logo4.png" />
+    <meta property="og:description"
+        content="Ratedpleasure is the nigerian website for all things sexual toys related, we offer you affordable, top quality toys and other accessories to enhance your sex life" />
 
 
     <!-- Bootstrap Css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-        <!--- Bootstrap Icons-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!--- Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
 
     <!-- FontAwesome Link -->
@@ -41,9 +45,9 @@ session_start();
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-     <!--- AlertifyJs CSS--->
-     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+    <!--- AlertifyJs CSS--->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css">
@@ -58,18 +62,19 @@ session_start();
     <meta name="msapplication-config" content="img/browserconfig.xml">
     <meta name="theme-color" content="#ad5d5d">
 
-  
+
 
     <style>
-.cart_img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-}
-body{
-    overflow-x: hidden;
-}
-</style>
+    .cart_img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+    </style>
 
 
 </head>
@@ -85,13 +90,13 @@ body{
                 <a href="index.php"><img src="img/logo3.png" alt="site logo" class="logo-nav me-3 logo"></a>
                 <div class="d-block d-md-none">
                     <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
-                                <sup class="text-danger"><?php cart_item(); ?></sup></i>
+                                    <sup class="text-danger"><?php cart_item(); ?></sup></i>
                             </a>
                         </li>
-                        
-                        
+
+
                     </ul>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -124,7 +129,7 @@ body{
                         </li>
                         <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping">
-                                <sup class="text-danger"><?php cart_item(); ?></sup></i>
+                                    <sup class="text-danger"><?php cart_item(); ?></sup></i>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -132,7 +137,7 @@ body{
                         </li>
                         <li class="nav-link ms-2 d-none d-lg-block fw-bold"> | </li>
                         <li class="nav-item ms-3">
-                        <?php 
+                            <?php 
                             /* if(!isset($_SESSION['username'])){
                                     echo "<li class='nav-item'><a class='nav-link' href='#'>Welcome Guest</a></li>";
                                 }else{
@@ -152,7 +157,7 @@ body{
                         </li>
                     </ul>
                     <form action="search_product.php" method="get" class="d-flex">
-                        
+
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                             name="search_data" id="search">
 
@@ -160,7 +165,7 @@ body{
                         <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
                     </form>
                     <div class="d-block d-md-none">
-                    
+
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <hr class="theme_color_text fw-bold">
                             <li class="nav-item text-light">
@@ -170,22 +175,16 @@ body{
                             </li>
                             <hr class="theme_color_text fw-bold">
 
-                               
+
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>
-       <!--- Calling cart function -->
-       <?php 
+        <!--- Calling cart function -->
+        <?php 
             cart();
         ?>
 
 
     </div>
-
-
-   
-
-
-    
